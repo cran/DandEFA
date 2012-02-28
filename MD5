@@ -1,8 +1,8 @@
-d931275cc817fcc493f791a22c2285c7 *DESCRIPTION
-53d38fe5186d72c501dbff6acecbbdb3 *NAMESPACE
+73933b8a55b8d861d5a79be4c2bb301e *DESCRIPTION
+810f6445072d8dac113824a9686b9992 *NAMESPACE
 9342719dc557048602ed96bcfd26db9e *R/dandelion.R
-f8f4081fdf33b8ff1274c512f0fcbbd8 *data/timss2007.rda
-a479badd5f956870103cb6d973ce883e *data/wqporsuk.rda
-938d9ad535945d1c5314bfb9c9762909 *man/dandelion.Rd
-2932ac4908d97b67b948c1a65fc53cfc *man/timss2007.Rd
+66b44271f6c8cdfb952e9bc02ed78c51 *data/timss2007.rda
+584effb4183fd8d59d2086272635ae6b *data/wqporsuk.rda
+3686dea95a2c90e04965275ef70c9074 *man/dandelion.Rd
+bd6a7a8ca334f58a978b83db33068d4c *man/timss2007.Rd
 adfe93c21e1ee05e606664b9322e38ef *man/wqporsuk.Rd

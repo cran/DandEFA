@@ -38,13 +38,9 @@ dandelion(factanal(covmat=timss_cor,factors=8)$loadings,bound=0)
 
 # Porsuk stream example for 6 and 10 factors
 data(wqporsuk)
-library(sfsmisc)
-wq_porsuk2 <- posdefify(wqporsuk)
-rownames(wq_porsuk2) <- rownames(wqporsuk)
-colnames(wq_porsuk2) <- colnames(wqporsuk)
-fact_wqporsuk <- factanal(covmat = wq_porsuk2,factors=6)$loadings
+fact_wqporsuk <- factanal(covmat = wqporsuk,factors=6)$loadings
 dandelion(fact_wqporsuk,bound=0)
-fact_wqporsuk <- factanal(covmat = wq_porsuk2,factors=10)$loadings
+fact_wqporsuk <- factanal(covmat = wqporsuk,factors=10)$loadings
 dandelion(fact_wqporsuk,bound=0)
 }
 
