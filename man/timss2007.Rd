@@ -5,11 +5,11 @@
 Science Perception of Eigth Grade Students
 }
 \description{
-This dataset gives the perception of science and attitude towards science for eigth grade students. Data is obtained from TIMSS 2007 Student Questionnaire. 
+This dataset gives the perception of science and attitude towards science for eigth grade students in Turkey data of TIMSS 2007. Data is obtained from TIMSS 2007 Student Questionnaire. First twelve variables have four choices, where "1" indicates "Agree A Lot" and "4" indicates "Disagree A Lot". For the remaining 16 variables also there are four choices, where "1" indicates "Every or Almost Every Lesson" and "4" indicate "Never". 
 }
 \usage{data(timss2007)}
 \format{
-  It consists of 4498 students with their 28 perception variables. Variables have been assigned according to last four letters of their coding in the Questionnaire 
+  Data consists of 4498 students with their 28 perception variables. Variables have been assigned according to last four letters of their coding in the Questionnaire. 
   \describe{
     \item{\code{AWEL}}{ BS4SAWEL - I usually do well in science}
     \item{\code{AMOR}}{ BS4SAMOR - I would like to take more science in school}
