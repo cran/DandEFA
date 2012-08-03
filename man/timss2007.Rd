@@ -9,7 +9,7 @@ This dataset gives the perception of science and attitude towards science for ei
 }
 \usage{data(timss2007)}
 \format{
-  Data consists of 4498 students with their 28 perception variables. Variables have been assigned according to last four letters of their coding in the Questionnaire. 
+  Data consists of 4498 students with their 28 perception variables. Variables have been assigned according to last four letters of their coding in the questionnaire. 
   \describe{
     \item{\code{AWEL}}{ BS4SAWEL - I usually do well in science}
     \item{\code{AMOR}}{ BS4SAMOR - I would like to take more science in school}
