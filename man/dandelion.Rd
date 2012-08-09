@@ -34,14 +34,6 @@ data(timss2007)
 timss_cor <- cor(timss2007,method="spearman",use="na.or.complete")
 dandelion(factanal(covmat=timss_cor,factors=5)$loadings,bound=0)
 dandelion(factanal(covmat=timss_cor,factors=8)$loadings,bound=0)
-
-
-# Porsuk stream example for 6 and 10 factors
-data(wqporsuk)
-fact_wqporsuk <- factanal(covmat = wqporsuk,factors=6)$loadings
-dandelion(fact_wqporsuk,bound=0)
-fact_wqporsuk <- factanal(covmat = wqporsuk,factors=10)$loadings
-dandelion(fact_wqporsuk,bound=0)
 }
 
 \keyword{ Factor Analysis }
