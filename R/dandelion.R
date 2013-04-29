@@ -1,4 +1,4 @@
-dandelion <- function(fact_load,bound=0.5)
+dandelion <- function(fact_load,bound=0.5,mcex=c(1,1))
 {
   if(class(fact_load) != "loadings")
   {
@@ -42,42 +42,53 @@ dandelion <- function(fact_load,bound=0.5)
   factor <- ncol(fact_load) 
   commun_fact <- apply (fact_load ,1 , function(x) sum(x^2))
   lambda <- apply (fact_load ,2 , function(x) sum(x^2))
+  lambda2 <- sort(lambda,decreasing = TRUE)
+  count<-NULL
+  for(i in lambda2) count <- c(count,which(i==lambda))
+  count <- unique(count)
+  fact_load <- fact_load[,count]
+  lambda <- lambda2 
   unique_fact <- 1 - commun_fact 
   length_star <- 360/nrow(fact_load)
   aci <- 360*(lambda/nrow(fact_load))
   iaci <- which(aci > 180)
   if(length(aci) > 0) aci[iaci] <- 360 - aci[iaci] 
-  limit <- sqrt(2*(1-cos(aci*pi/180)))/2
+  limitt <- sqrt(2*(1-cos(aci*pi/180)))/2
+  limit <-  limitt * 0.9
+  maxcex <- (lambda/max(lambda))*mcex[1]
   
+
   count <- NULL
+  count2 <- NULL 
+  count3 <- NULL 
   for( i in 1:factor)
   {
     for(j in 1:nrow(fact_load))
     {
-      if(abs(fact_load[j,i])==max(abs(fact_load[j,]))) count <- c(count,j)
+      if(abs(fact_load[j,i])==max(abs(fact_load[j,]))) 
+      {nrow
+		count <- c(count,j)
+            if(length(count2)==(i-1)) count2 <- c(count2,j)
+      }
     }
   }
+
   fact_load <- fact_load[count,]
-  
-  
-  degreef <- (270 + c(0,cumsum(aci)))%%360 
-  xlimit <- cos(degreef*pi/180) 
-  ylimit <- sin(-degreef*pi/180)
+  for(i in 1:factor)  
+  {
+	temp <- which(count==count2[i])
+	if(length(temp) != 0) count3 <- c(count3,which(count==count2[i]))
+  }
+
+  degreef <- (270 + c(0,cumsum(aci)))%%360
+  xlimit <- cos(degreef*pi/180)+c(limitt,0)
+  ylimit <- sin(-degreef*pi/180)+c(limitt,0)
   xmax <- max(xlimit)
   xmin <- min(xlimit)
   ymax <- max(ylimit)
   ymin <- min(ylimit)
-  maxxk <- which(xlimit==xmax)
-  minxk <- which(xlimit==xmin)
-  maxyk <- which(ylimit==ymax)
-  minyk <- which(ylimit==ymin)
-  if(max(limit) >= xmax) xmax <- max(limit)
-  if(max(limit) < xmin)  xmin <- max(limit)
-  if(minxk != (factor+1)) xmin <- xmin-limit[minxk[1]]
-  if(maxxk != (factor+1)) xmax <- xmax+limit[maxxk[1]]
-  if(minyk != (factor+1)) ymin <- ymin-limit[minyk[1]]
-  if(maxyk != (factor+1)) ymax <- ymax+limit[maxyk[1]]
-  
+  if(max(limitt) > xmax) xmax <- max(limitt)
+  if(max(limitt) > abs(xmin)) xmin <- -1*max(limitt)
   
   par(mar=c(0,0,0,0))
   layout(matrix(c(1,1,1,2,3,4),nrow=3),widths=c(7,3),heights=c(1,1,1))
@@ -87,8 +98,11 @@ dandelion <- function(fact_load,bound=0.5)
   degreev <- (270+0:(nrow(fact_load)-1)*(360/nrow(fact_load)))%%360
   x2 = cos(degreef*pi/180)
   y2 = sin(-degreef*pi/180)
+  srt2 <- 360 - degreev
+  bloc <- which((degreev-270)%%360 > 180)  
+  srt2[bloc]  <- srt2[bloc] - 180 
   
-  for ( i in 1:factor) 
+  for (i in 1:factor) 
   {
     
     lines(c(0,x2[i]),c(0,y2[i]), type="l",col="black")
@@ -98,7 +112,7 @@ dandelion <- function(fact_load,bound=0.5)
     if(length(bloc) > 0)
     {
       datanew[bloc] <- rep(0,length(datanew[bloc]))
-      datanew[-bloc] <- (datanew-bound)/(1-bound)
+      datanew[-bloc] <- (datanew[-bloc]-bound)/(1-bound)
     }
     else datanew <- (datanew - bound)/(1-bound)
     
@@ -118,6 +132,18 @@ dandelion <- function(fact_load,bound=0.5)
       load_grid(fact_load[jnew,i],fact_load[j-1,i],x3[jnew],y3[jnew],x2[i],y2[i],x3[j-1],y3[j-1])
       lines(c(x3[jnew],xm[jnew]),c(y3[jnew],ym[jnew]), type="l",col="grey")             
     }
+ 
+    if((length(count3)+1) > i) 
+    {	
+      if(length(count3) == i) text_space <- count3[i]:nrow(fact_load)
+      else text_space <- count3[i]:(count3[i+1]-1)
+    	for (k in text_space)
+    	{
+     	  x4 = x2[i] + limitt[i]*cos(degreev[k]*pi/180)
+    	  y4 = y2[i] + limitt[i]*sin(-degreev[k]*pi/180)
+        text(x4,y4,paste(abbreviate(rownames(fact_load)[k])),cex=maxcex[i],srt=srt2[k])
+      }
+    }
   }
   
   x2 = cos(degreef[factor+1]*pi/180)
@@ -136,14 +162,11 @@ dandelion <- function(fact_load,bound=0.5)
   y4 = 1.25*sin(-degreev*pi/180)
   x5 = unique_fact*cos(degreev*pi/180)
   y5 = unique_fact*sin(-degreev*pi/180)
-  srt2 <- 360 - degreev
-  bloc <- which((degreev-270)%%360 > 180)  
-  srt2[bloc]  <- srt2[bloc] - 180 
   
   for(i in 1:nrow(fact_load))  
   {
     lines(c(0,x3[i]),c(0,y3[i]),type="l",col="grey")
-    text(x4[i],y4[i],paste(abbreviate(rownames(fact_load)[i])),cex=0.8,srt=srt2[i])
+    text(x4[i],y4[i],paste(abbreviate(rownames(fact_load)[i])),cex=mcex[2],srt=srt2[i])
   }
   
   polygon(x5,y5,col="blue",border="blue")
@@ -156,7 +179,7 @@ dandelion <- function(fact_load,bound=0.5)
   for(i in 1:nrow(fact_load))  
   {
     lines(c(0,x3[i]),c(0,y3[i]),type="l",col="grey")
-    text(x4[i],y4[i],paste(abbreviate(rownames(fact_load)[i])),cex=0.8,srt=srt2[i])
+    text(x4[i],y4[i],paste(abbreviate(rownames(fact_load)[i])),cex=mcex[2],srt=srt2[i])
   }
   
   polygon(x5,y5,col="blue",border="blue")
@@ -177,3 +200,4 @@ dandelion <- function(fact_load,bound=0.5)
   par(old_par)
   invisible()
 }
+
