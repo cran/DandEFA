@@ -1,6 +1,8 @@
-0de8418a44f5c4d4c2957611a990ea17 *DESCRIPTION
-272675db62406f7e3a9d064ccbb45363 *NAMESPACE
-b65abeff7a2aa7bf99daefc12553083b *R/dandelion.R
+7eb1168095bdaf4ce706e9695e5b1c73 *DESCRIPTION
+efeb6a70c3c5663abe530d921544575c *NAMESPACE
+7e32627ee1c452f83c2617382e2bf0f3 *R/dandelion.R
+3f22c9cbc63d1cbc57c166383e343f9e *R/factload.R
 fcbeccec7d2e839bcefb5f2331b58069 *data/timss2011.rda
-f90a6e3ded80aeeb186eb60a7c354432 *man/dandelion.Rd
-424e54dd6ddc6101c7e763a848b4af08 *man/timss2011.Rd
+7abb95ac82f46d2740776a86974a580f *man/dandelion.Rd
+a77de50658243f68d1ca2cd15b43bccb *man/factload.Rd
+9d2f309b43905ddd1587dc8eaf643423 *man/timss2011.Rd
