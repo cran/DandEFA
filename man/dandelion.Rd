@@ -7,7 +7,7 @@ Dandelion Plot
 Creating a Dandelion plot for R-mode Exploratory Factor Analysis methods. Loadings matrix and Factor variances are being visualized.
 } 
 \usage{
-dandelion(fact_load, bound = 0.5,mcex=c(1,1))
+dandelion(fact_load, bound = 0.5, mcex=c(1,1))
 }
 \arguments{
   \item{fact_load}{A "loadings" class object. Factor loading matrix. 
@@ -31,12 +31,13 @@ Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir(Advisor)
 }
 
 \examples{
-# Timss 2007 Student Questionnaire Example for 5 and 8 loadings
+# EFA of Timss 2011 Student Questionnaire Example for 5, 8, and 10 number of factors
 data(timss2011)
 timss2011 <- na.omit(timss2011)
-timss_cor <- cor(timss2011,method="spearman")
-dandelion(factanal(covmat=timss_cor,factors=5)$loadings,bound=0)
-dandelion(factanal(covmat=timss_cor,factors=8)$loadings,bound=0)
+facl <- factload(timss2011,nfac=5,method="prax",cormeth="spearman")
+dandelion(facl,bound=0)
+facl <- factload(timss2011,nfac=8,method="mle",cormeth="pearson")
+dandelion(facl,bound=0)
 }
 
 \keyword{ Factor Analysis }

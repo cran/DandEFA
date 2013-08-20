@@ -5,7 +5,7 @@
 Science Perception of Eigth Grade Students
 }
 \description{
-This dataset gives the perception of science and attitude towards science for eigth grade students in Turkey data of TIMSS 2011. Data is obtained from TIMSS 2011 Student Questionnaire. First twelve variables have four choices, where "1" indicates "Agree A Lot" and "4" indicates "Disagree A Lot". For the remaining 16 variables also there are four choices, where "1" indicates "Every or Almost Every Lesson" and "4" indicate "Never". 
+This dataset gives the perception of science and attitude towards science for eigth grade students in Turkey data of TIMSS 2011. Data is obtained from TIMSS 2011 Student Questionnaire. Among 42 questions, first 16 questions are on students' general opinion about school, and last 26 questions are about students' attitude and perception towards science lessons. All the variables are measured with likert type scale with four choices where '1' indicates "Every Day or Almost Every Day / Agree A Lot / At Least Once A Week" and '4' indicates "Never or Almost Never / Disagree A Lot / Never" depending on the question. 
 }
 \usage{data(timss2011)}
 \format{
@@ -61,4 +61,4 @@ TIMSS 2011 Student Questionnaire http://timssandpirls.bc.edu/timss2011/framework
 \references{
 TIMSS 2011 User Guide for the International Database. 2013 International Association for the Evaluation of Educational Achievement 
 }
-\keyword{datasets}
+\keyword{TIMSS}
