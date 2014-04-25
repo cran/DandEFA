@@ -6,8 +6,8 @@ Dandelion Plot
 \description{
 Creating a Dandelion plot for R-mode Exploratory Factor Analysis methods. Loadings matrix and Factor variances are being visualized.
 } 
-\usage{
-dandelion(fact_load, bound = 0.5, mcex=c(1,1))
+\usage{ 
+dandelion(fact_load, bound = 0.5, mcex=c(1,1), palet)
 }
 \arguments{
   \item{fact_load}{A "loadings" class object. Factor loading matrix. 
@@ -16,7 +16,10 @@ dandelion(fact_load, bound = 0.5, mcex=c(1,1))
 Minimum loadings to visualize. Value should be between 0 and 1. For example, bound=0.5 will only visualize loadings more than 0.5.
  }
   \item{mcex}{
-A vector with two points. First element determines the size of labels within dandelion plot, and second element determines the size of label within uniquenesses and communalities graphs
+A vector with two points. First element determines the size of labels within dandelion plot, and second element determines the size of labels within uniquenesses and communalities graphs
+ }
+  \item{palet}{
+A vector of colors. The first and the last elements of the vector are the colors of positive and negative loadings
  }
 }
 \details{
@@ -34,10 +37,11 @@ Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir(Advisor)
 # EFA of Timss 2011 Student Questionnaire Example for 5, 8, and 10 number of factors
 data(timss2011)
 timss2011 <- na.omit(timss2011)
+dandpal <- rev(rainbow(100, start = 0, end = 0.2))
 facl <- factload(timss2011,nfac=5,method="prax",cormeth="spearman")
-dandelion(facl,bound=0)
+dandelion(facl,bound=0,mcex=c(1,1.2),palet=dandpal)
 facl <- factload(timss2011,nfac=8,method="mle",cormeth="pearson")
-dandelion(facl,bound=0)
+dandelion(facl,bound=0,mcex=c(1,1.2),palet=dandpal)
 }
 
 \keyword{ Factor Analysis }

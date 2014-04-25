@@ -18,7 +18,7 @@ factload(data, cormeth = "spearman", data.cor,
   Dataset to be analyzed for R-mode Exploratory Factor Analysis
 }
   \item{cormeth}{
-  Correlation coefficient. Type \code{polycor} for polychoric correlation coefficient (see \link{polychor}), for else see \link{cor}. If \code{data} is \code{NULL}, and \code{data.cor} is specified; \code{cormeth} will be ignored. 
+  Correlation coefficient. Type \code{polycor} for polychoric correlation coefficient (see \code{\link{polychor}}), for else see \code{\link{cor}}. If \code{data} is \code{NULL}, and \code{data.cor} is specified; \code{cormeth} will be ignored. 
 }
   \item{data.cor}{
   Given correlation matrix. However, if \code{data} is specified, \code{data.cor} will be replaced.
