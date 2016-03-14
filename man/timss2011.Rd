@@ -2,10 +2,10 @@
 \alias{timss2011}
 \docType{data}
 \title{
-Science Perception of Eigth Grade Students
+Science Perception of Eigth Grade Students, TIMSS 2011
 }
 \description{
-This dataset gives the perception of science and attitude towards science for eigth grade students in Turkey data of TIMSS 2011. Data is obtained from TIMSS 2011 Student Questionnaire. Among 42 questions, first 16 questions are on students' general opinion about school, and last 26 questions are about students' attitude and perception towards science lessons. All the variables are measured with likert type scale with four choices where '1' indicates "Every Day or Almost Every Day / Agree A Lot / At Least Once A Week" and '4' indicates "Never or Almost Never / Disagree A Lot / Never" depending on the question. 
+The data set on the perception of science and attitude towards science for eigth grade students in Turkey data of TIMSS 2011. Data set is obtained from TIMSS 2011 Student Questionnaire. Among 42 questions, first 16 questions are on students' general opinion about school, and last 26 questions are on students' attitude and perception towards science lessons. The variables are measured with likert type scale with four choices where '1' indicates "Every Day or Almost Every Day / Agree A Lot / At Least Once A Week" and '4' indicates "Never or Almost Never / Disagree A Lot / Never" depending on the question. 
 }
 \usage{data(timss2011)}
 \format{

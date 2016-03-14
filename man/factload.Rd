@@ -5,8 +5,7 @@
 R-mode Exploratory Factor Analysis
 }
 \description{
- This function produces a factor loadings matrix according to the specified factor extraction method, number of factors and rotation method. 
- R-mode Exploratory Factor Analysis is based on the factorization of the variables. See "References" for more details.
+ This function produces a factor loading matrix given by the specified factor extraction method, number of factors and rotation method. R-mode Exploratory Factor Analysis is based on the factorization of the variables. See "References" for more details.
 }
 \usage{
 factload(data, cormeth = "spearman", data.cor, 
@@ -36,7 +35,7 @@ factload(data, cormeth = "spearman", data.cor,
 
 
 \value{
- Returns a loadings class factor loadings matrix
+ Returns a loadings class factor loading matrix
 }
 
 \references{

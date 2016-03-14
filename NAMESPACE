@@ -1,3 +1,5 @@
 exportPattern("^[[:alpha:]]+")
 import(gplots)
 import(polycor)
+importFrom("graphics", "barplot", "layout", "legend", "lines", "par","plot", "polygon", "text", "title")
+importFrom("stats", "cor", "factanal", "promax", "varimax")

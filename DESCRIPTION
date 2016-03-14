@@ -1,14 +1,14 @@
 Package: DandEFA
 Type: Package
-Title: Dandelion Plot for R-mode Exploratory Factor Analysis
-Version: 1.5
-Date: 2014-04-24
-Author: Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir (Advisor)
-Depends: R(>= 3.1.0), gplots, polycor
+Title: Dandelion Plot for R-Mode Exploratory Factor Analysis
+Version: 1.6
+Date: 2016-03-14
+Author: Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir 
+Depends: R(>= 3.2.3), gplots, polycor
 Maintainer: Artur Manukyan <artur-man@hotmail.com>
-Description: This package contains the function used to create the Dandelion Plot. Dandelion Plot is a visualization method for R-mode Exploratory Factor Analysis
+Description: Contains the function used to create the Dandelion Plot. Dandelion Plot is a visualization method for R-mode Exploratory Factor Analysis. 
 License: GPL-2
-Packaged: 2014-04-24 20:08:07 UTC; Artur
 NeedsCompilation: no
+Packaged: 2016-03-14 08:33:37 UTC; Artur
 Repository: CRAN
-Date/Publication: 2014-04-25 13:40:35
+Date/Publication: 2016-03-14 12:57:57

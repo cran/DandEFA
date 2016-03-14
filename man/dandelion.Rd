@@ -4,7 +4,7 @@
 Dandelion Plot 
 }
 \description{
-Creating a Dandelion plot for R-mode Exploratory Factor Analysis methods. Loadings matrix and Factor variances are being visualized.
+A Dandelion plot for R-mode Exploratory Factor Analysis methods. The loading matrix and the factor variances are being visualized. 
 } 
 \usage{ 
 dandelion(fact_load, bound = 0.5, mcex=c(1,1), palet)
@@ -13,28 +13,28 @@ dandelion(fact_load, bound = 0.5, mcex=c(1,1), palet)
   \item{fact_load}{A "loadings" class object. Factor loading matrix. 
 }
   \item{bound}{
-Minimum loadings to visualize. Value should be between 0 and 1. For example, bound=0.5 will only visualize loadings more than 0.5.
+Minimum loadings to visualize. It should be set between 0 and 1. For example, bound=0.5 will only visualize loadings more than 0.5.
  }
   \item{mcex}{
-A vector with two points. First element determines the size of labels within dandelion plot, and second element determines the size of labels within uniquenesses and communalities graphs
+A vector with two points. First value determines the size of labels within dandelion plot, and the second determines the size of labels within uniquenesses and communalities graphs
  }
   \item{palet}{
-A vector of colors. The first and the last elements of the vector are the colors of positive and negative loadings
+A vector of color pallette. The first and the last elements of the vector are the colors of positive and negative loadings. 
  }
 }
 \details{
-A Dandelion Plot visualizes both factor variances and loadings in the same time. Each central line represents a different factor and is connected to a star graph. These star graphs visualize the factor loadings for the corresponding factor. Negative and positive loadings are indicated by red and blue regions, respectively. Explained variance of each factor can be observed by the size of each star graph or by the angle between the consecutive central lines. For example, explained variance of first factor is determined by the angle between the first and second central line. 
-Communalities and uniquenesses are also given on the right hand side along with a list of factor variances and explanation ratios. 
+A Dandelion Plot visualizes both factor variances and loadings in the same time. Each central line represents a different factor and is connected to a star graph. These star graphs visualize the factor loadings for the corresponding factor. Negative and positive loadings are indicated by two different colors. Explained variance of each factor can be observed by the size of each star graph or by the angle between the current and the consecutive central line. For example, explained variance of first factor is determined by the angle between the first and second central line. 
+Communalities and uniquenesses are also given on the right hand side along barchart of cummulative explanation ratios of factors (with individual variances on top). 
 }
 \references{
-Artur Manukyan, Ibrahim Demir, Ahmet Sedef (2011) "A New Graphical Approach to Exploratory Factor Analysis", \emph{ABSTRACT BOOK for the 5th Annual International Conference on Mathematics and Statistics}, Atina, Greece, June 2011.
+Artur Manukyan, Erhan Cene, Ahmet Sedef, Ibrahim Demir, \emph{Dandelion plot: a method for the visualization of R-mode exploratory factor analyses}. Computational Statistics 29.6 (2014): 1769-1791.
 }
 \author{
-Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir(Advisor)
+Artur Manukyan, Ahmet Sedef, Erhan Cene, Ibrahim Demir
 }
 
 \examples{
-# EFA of Timss 2011 Student Questionnaire Example for 5, 8, and 10 number of factors
+# E.F.A. of Timss 2011 Student Questionnaire Example for 5 and 8 number of factors
 data(timss2011)
 timss2011 <- na.omit(timss2011)
 dandpal <- rev(rainbow(100, start = 0, end = 0.2))
