@@ -1,6 +1,6 @@
 dandelion <- function (fact_load, bound = 0.5, mcex = c(1, 1), palet) 
 {
-  if (class(fact_load) != "loadings") {
+  if(!inherits(fact_load, "loadings")){
     cat(" Example : dandelion(loading object,bound=0)\n")
     stop("please use a loadings object")
   }
